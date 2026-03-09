@@ -5,7 +5,7 @@ import glob
 import os
 
 
-plugin_dir = "__PLUGIN_NAME__"
+plugin_dir = "Chefkoch"
 
 
 class build_trans(Command):

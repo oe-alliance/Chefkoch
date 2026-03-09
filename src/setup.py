@@ -5,7 +5,7 @@ import re
 import glob
 
 src_dir = os.path.dirname(__file__)
-plugin_dir = "__PLUGIN_NAME__"
+plugin_dir = "Chefkoch"
 package_path = os.path.join('src', plugin_dir)
 
 version_file = os.path.join(package_path, '__init__.py')
@@ -30,13 +30,13 @@ add_pattern_if_exists('*.png')
 add_pattern_if_exists('*.xml')
 add_pattern_if_exists('locale/*/LC_MESSAGES/*.mo')
 
-name = 'enigma2-plugin-extensions-__PLUGIN_NAME__'.lower()
+name = 'enigma2-plugin-extensions-Chefkoch'.lower()
 
-pkg = 'Extensions.__PLUGIN_NAME__'
+pkg = 'Extensions.Chefkoch'
 setup(name=name,
        version=version,
-       description='__PLUGIN_NAME__ for E2',
-       package_dir={pkg: '__PLUGIN_NAME__'},
+       description='Chefkoch for E2',
+       package_dir={pkg: 'Chefkoch'},
        packages=[pkg],
        package_data={pkg: patterns},
        cmdclass=setup_translate.cmdclass,  # for translation

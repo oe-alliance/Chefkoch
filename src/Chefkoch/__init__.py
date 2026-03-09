@@ -3,8 +3,8 @@ from gettext import bindtextdomain, dgettext, gettext
 from Components.Language import language
 from Tools.Directories import SCOPE_PLUGINS, resolveFilename
 
-PluginLanguageDomain = "__PLUGIN_NAME__"
-PluginLanguagePath = "Extensions/__PLUGIN_NAME__/locale"
+PluginLanguageDomain = "Chefkoch"
+PluginLanguagePath = "Extensions/Chefkoch/locale"
 
 __version__ = "1.0.0"
 
