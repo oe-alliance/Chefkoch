@@ -25,12 +25,12 @@ def add_pattern_if_exists(pattern):
         patterns.append(pattern)
 
 
-add_pattern_if_exists('images/*.png')
+add_pattern_if_exists('db/*.*')
+add_pattern_if_exists('pic/*.png')
 add_pattern_if_exists('*.png')
 add_pattern_if_exists('*.xml')
-add_pattern_if_exists('locale/*/LC_MESSAGES/*.mo')
 
-name = 'enigma2-plugin-extensions-Chefkoch'.lower()
+name = 'enigma2-plugin-extensions-chefkoch'
 
 pkg = 'Extensions.Chefkoch'
 setup(name=name,
