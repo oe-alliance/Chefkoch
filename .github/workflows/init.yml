@@ -1,0 +1,40 @@
+name: First-time Plugin Init
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  init:
+    if: github.run_number == 1
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set plugin name
+        run: |
+          echo "PLUGIN_NAME=${{ github.event.repository.name }}" >> $GITHUB_ENV
+
+      - name: Replace placeholders in relevant files
+        run: |
+          PLUGIN="${PLUGIN_NAME}"
+          find src -type f -exec sed -i "s/__PLUGIN_NAME__/${PLUGIN}/g" {} +
+
+      - name: Rename plugin folder
+        run: |
+          PLUGIN="${PLUGIN_NAME}"
+          git mv "src/__PLUGIN_NAME__" "src/${PLUGIN}"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Initialize plugin files"
+          git push
